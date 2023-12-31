@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Chi tiết sản phẩm
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/product.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/shop.js' %}"></script>
+{% endblock link_content %}
+
+{% block product_content %}
+<div class="product_container">
+    <div class="col-sm-4 product">
+        <img src="{% static product.img_url %}" alt="img_product" class="img_product">
+        <h4>{{product.product_name}}</h4>
+        <div class="cost">${{product.price}}</div>
+        
+        <input type="button" value="-" class="btn decreaseBtn" data-product-id="{{ product.product_id }}">
+        <input type="text" class="quantityInput" name="quantity" value="1" data-product-id="{{ product.product_id }}">
+        <input type="button" value="+" class="btn increaseBtn" data-product-id="{{ product.product_id }}">
+        <br>
+        <button class="btn btn-outline-dark addToCart" data-product-id="{{ product.product_id }}" data-product-name="{{ product.product_name }}" data-product-price="{{ product.price }}" data-product-img="{{ product.img_url }}">Thêm vào giỏ hàng</button>
+        <a href="{% url "shop_app:shop" %}">
+            <button class="btn btn-outline-dark">Tiếp tục mua hàng</button>
+        </a>
+    </div>
+</div>
+{% endblock product_content %}

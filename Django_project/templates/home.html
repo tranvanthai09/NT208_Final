@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Trang chủ
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static "js/shop.js" %}"></script>
+{% endblock link_content %}
+
+{% block banner%}
+    <div class="section_1" style="background-image: url('{% static 'image/background_img.png' %}');">
+        <div class="row row_banner">
+            <div class="col-sm-3">
+                <h1 class="title_banner">Time to discover</h1>
+                <button class="btn_banner">Khám phá</button>
+                <div class="media_items_list">
+                    <a class="media_item" href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="media_item" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="{% static "image/img_02.png" %}" alt="img_banner" class="img_banner">
+            </div>
+            <div class="col-sm-3 col_right_banner">
+                <div class="info_banner">
+                    <h2>100%</h2>
+                    <h3>Nature grades</h3>
+                </div>
+                <div class="info_banner">
+                    <h2>100%</h2>
+                    <h3>Nature grades</h3>
+                </div>
+                <div class="info_banner">
+                    <h2>100%</h2>
+                    <h3>Nature grades</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock banner%}
+
+{% block home_content%}
+    <!-- CTA -->
+    <div class="container section_3">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>THERE IS ALL ABOUT CAFENOD COFFEE HOUSE</h1>
+                <p class="text_cta">
+                    From a cultural standpoint, coffeehouses largely serve as centers of social interaction: the coffeehouse provides patrons with a place to congregate, talk, read, write, entertain one another, or pass the time, whether individually or in small groups.
+                    <br>
+                    <br>
+                    THERE IS ALL ABOUT OUR CAFENOD COFFEE SHOPS
+                    The coffee is brewed by first roasting the green coffee beans over hot coals in a brazier. Once the beans are roasted each participant is given an opportunity to sample
+                    <br>
+                    <br>
+                    THIS IS FOLLOWED BY THE GRINDING
+                    The coffee is brewed by first roasting the green coffee beans over hot coals in a brazier. Once the beans are roasted each participant is given an opportunity to sample the aromatic smoke by wafting it towards them.
+                </p>
+                <button class="cta_btn">Đọc thêm</button>
+            </div>
+            <div class="col-sm-6">
+                <img src="{% static "image/img_01.png" %}" alt="img_cta" class="img_cta">
+            </div>
+        </div>
+    </div>
+
+    <!-- Product -->
+    <div class="container section_4">
+        <div class="row row_title">
+            <div class="col-sm-6">
+                <h1>Our popular product</h1>
+            </div>
+            <div class="col-sm-6 col_btn_product">
+                <form action="{% url 'shop_app:shop' %}" method="GET">
+                    <button class="btn btn-outline-dark btn_product">Ghé thăm sản phẩm của chúng tôi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row_product_1">
+        {% for product in products|slice:":3" %}
+        <div class="col-sm-4 col_product">
+            <img src="{% static product.img_url %}" alt="img_product" class="img_product">
+            <h4>{{product.product_name}}</h4>
+            <div class="cost">${{ product.price }}</div>
+            
+            <input type="button" value="-" class="btn decreaseBtn" data-product-id="{{ product.product_id }}">
+            <input type="text" class="quantityInput" name="quantity" value="1" data-product-id="{{ product.product_id }}">
+            <input type="button" value="+" class="btn increaseBtn" data-product-id="{{ product.product_id }}">
+            <br>
+            <button class="btn btn-outline-dark addToCart" data-product-id="{{ product.product_id }}" data-product-name="{{ product.product_name }}" data-product-price="{{ product.price }}" data-product-img="{{ product.img_url }}">Thêm vào giỏ hàng</button>
+            <a href="{% url "product_app:product_detail" product.slug product.product_id%}">
+                <button class="btn btn-outline-dark">Chi tiết sản phẩm</button>
+            </a>
+        </div>
+        {% endfor %} 
+    </div>
+
+    <div class="row row_product_2">
+        {% for product in products|slice:"3:6"%}
+            <div class="col-sm-4 col_product">
+                <img src="{% static product.img_url %}" alt="img_product" class="img_product">
+                <h4>{{product.product_name}}</h4>
+                <div class="cost">${{ product.price }}</div>
+                
+                <input type="button" value="-" class="btn decreaseBtn" data-product-id="{{ product.product_id }}">
+                <input type="text" class="quantityInput" name="quantity" value="1" data-product-id="{{ product.product_id }}">
+                <input type="button" value="+" class="btn increaseBtn" data-product-id="{{ product.product_id }}">
+                <br>
+                <button class="btn btn-outline-dark addToCart" data-product-id="{{ product.product_id }}" data-product-name="{{ product.product_name }}" data-product-price="{{ product.price }}" data-product-img="{{ product.img_url }}">Thêm vào giỏ hàng</button>
+                <a href="{% url "product_app:product_detail" product.slug product.product_id%}">
+                    <button class="btn btn-outline-dark">Chi tiết sản phẩm</button>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- nhan xet cua nguoi dung  -->
+
+    <!-- blogs  -->
+    <div class="container section_5">
+        <!-- icon  -->
+        <h1 class="h1_blog">Blogs</h1>
+        <div class="row row_blogs">
+            <div class="col col_blogs_item">
+                <a href=""><img src="{% static "image/Picture/cafe-vot-sai-gon-12-1024x1024.jpg" %}" alt="img_blogs" class="img_blogs"></a>
+                <a class="title_blogs" href=""><h5>4 QUÁN CAFE VỢT SÀI GÒN TỒN TẠI HƠN NỬA THẾ KỶ AI CŨNG NÊN GHÉ ĐẾN MỘT LẦN</h5></a>
+            </div>
+            <div class="col col_blogs_item">
+                <a href=""><img src="{% static "image/Picture/cafe-vot-sai-gon-9.jpg" %}" alt="img_blogs" class="img_blogs"></a>
+                <a class="title_blogs" href=""><h5>LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN CỦA CÀ PHÊ: SỰ TÁC ĐỘNG TO LỚN CỦA CÀ PHÊ ĐỐI VỚI CÁC NƯỚC CHÂU ÂU</h5></a>
+            </div>
+            <div class="col col_blogs_item">
+                <a href=""><img src="{% static "image/Picture/cafe-vot-sai-gon-13.jpg" %}" alt="img_blogs" class="img_blogs"></a>
+                <a class="title_blogs" href=""><h5>LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN CỦA CÀ PHÊ: SỰ TÁC ĐỘNG TO LỚN CỦA CÀ PHÊ ĐỐI VỚI CÁC NƯỚC CHÂU ÂU</h5></a>
+            </div>
+        </div>
+        <form action="{% url 'blog_app:blog' %}" method="GET">
+            <button class="btn btn-outline-dark btn_blogs">Xem thêm</button>
+        </form>
+    </div>
+{% endblock home_content%}

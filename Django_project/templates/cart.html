@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Giỏ hàng
+{% endblock title_content %}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/cart.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static "js/cart.js" %}"></script>
+{% endblock link_content %}
+
+{% block cart_content%}
+<div class="body">
+      <div class="mid">
+        <div class="mid-wrap">
+          <div class="mid-title">
+            <div class="product">product</div>
+            <div class="price">price</div>
+            <div class="quantity">quantity</div>
+            <div class="subtotal">subtotal</div>
+          </div>
+      <div class="miditem_container">
+      
+      </div>
+          
+          <div class="mid-btn">
+            <button class="btn">
+              <span>Total Quantity</span>
+              <span id="quantityDisplay"></span>
+            </button>
+            <button class="btn">
+              <span>total</span>
+              <span id = 'priceDisplay'>$45,00</span>
+            </button>
+            <a href="{% url "checkout_app:checkout" %}">
+              <button class="btn brown">
+                <span>procced to checkout</span>
+              </button>
+            </a>
+
+            <button class="btn brown delete_cart">
+              <span>Xóa giỏ hàng</span>
+            </button>
+          </div>
+        </div>
+      </div>
+{% endblock cart_content%}

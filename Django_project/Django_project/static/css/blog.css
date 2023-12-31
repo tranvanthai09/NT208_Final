@@ -1,0 +1,12 @@
+.section_2{
+    margin: 100px 0;
+}
+
+.post_blogs{
+    background-color: gray;
+    margin: 25px 0;
+}
+
+.title_post, .text_post, .btn_post{
+    margin: 25px 0;
+}

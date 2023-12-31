@@ -1,0 +1,24 @@
+.img_product{
+    width: 400px;
+    height: 400px;
+}
+
+.product_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product {
+    width: 80%;
+    text-align: center;
+    margin: 25px;
+}
+
+#quantity {
+    width: 40px;
+}
+
+.quantityInput{
+    text-align: center;
+}

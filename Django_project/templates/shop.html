@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block title_content%}
+Sản phẩm
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/shop.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static "js/shop.js" %}"></script>
+{% endblock link_content %}
+
+{%block shop_content%}
+    <div class="container section_2">
+        <div class="prouct_list">
+            
+            <div class="btn_list">
+                <button type="button" name="All" class="btn_category" data-component="all">All</button>
+                <button type="button" name="Robusta" class="btn_category" data-component="robusta">Robusta</button>
+                <button type="button" name="Arabica" class="btn_category" data-component="arabica">Arabica</button>
+                <button type="button" name="Culi" class="btn_category" data-component="culi">Culi</button>
+            </div>
+
+            <div class="product_container">
+                {% for product in products %}
+                <div class="col-sm-4 product">
+                    <img src="{% static product.img_url %}" alt="img_product" class="img_product">
+                    <h4>{{product.product_name}}</h4>
+                    <div class="cost">${{product.price}}</div>
+                    
+                    <input type="button" value="-" class="btn decreaseBtn" data-product-id="{{ product.product_id }}">
+                    <input type="text" class="quantityInput" name="quantity" value="1" data-product-id="{{ product.product_id }}">
+                    <input type="button" value="+" class="btn increaseBtn" data-product-id="{{ product.product_id }}">
+                    <br>
+                    <button class="btn btn-outline-dark addToCart" data-product-id="{{ product.product_id }}" data-product-name="{{ product.product_name }}" data-product-price="{{ product.price }}" data-product-img="{{ product.img_url }}">Add to cart</button>
+                    <a href="{% url "product_app:product_detail" product.slug product.product_id%}">
+                        <button class="btn btn-outline-dark">Chi tiết sản phẩm</button>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{%endblock shop_content%}

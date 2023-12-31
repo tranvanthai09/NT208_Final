@@ -1,0 +1,27 @@
+.section_2{
+    margin: 100px 0;
+}
+
+.div_btn_checkout{
+    text-align: right;
+}
+
+.btn_checkout{
+    margin-top: 25px;
+    width: 150px;
+    height: 50px;
+    background-color: #C7A17A;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 700;
+    border: 0px;
+}
+
+.btn_checkout:hover{
+    background-color: black;
+}
+
+.error{
+    color: red;
+}

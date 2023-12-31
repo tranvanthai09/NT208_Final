@@ -1,0 +1,252 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.menu_items{
+    margin: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.menu_items:hover{
+    color: #C7A17A;
+}
+
+.menu{
+    margin: 0px 150px;
+}
+
+.logo{
+    width: 175px;
+    height: 75px;
+}
+
+.fa-magnifying-glass, .fa-cart-shopping, .fa-user{
+    margin: 0 20px;
+    color: black;
+}
+
+.btn_contact{
+    margin-left: 100px;
+    width: 150px;
+    height: 50px;
+    background-color: #C7A17A;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    border: 0px;
+    font-weight: 700;
+}
+
+.btn_contact:hover, .btn_banner:hover{
+    background-color: black;
+}
+
+.img_banner{
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+.div_banner{
+    position: relative;
+}
+
+.div_content_banner{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 1000;
+}
+
+.section_2{
+    margin: 100px 0;
+}
+
+.post_blogs{
+    background-color: gray;
+    margin: 25px 0;
+}
+
+.title_post, .text_post, .btn_post{
+    margin: 25px 0;
+}
+
+.footer{
+    background-color: black;
+    height: 400px;
+}
+
+.link_footer{
+    text-decoration: none;
+    color: white;
+    margin: 50px 0;
+}
+
+.mid {
+    background-color: #f6f6f6;
+    padding: 12rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mid-wrap {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .mid-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .mid-title * {
+    color: #1b1b1b;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  
+  .product {
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+  .product-img {
+    width: 7rem;
+    height: 7rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    background-color: #f6f6f6;
+  }
+  .product-img img {
+    vertical-align: middle;
+    height: auto;
+    max-height: 5rem;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .product-x {
+    margin: 0 3rem;
+    color: #ff5555;
+    font-size: 2rem;
+  }
+  .product-name {
+    font-size: 1.5rem;
+    font-family: "Oswald", sans-serif;
+    color: #1b1b1b;
+  }
+  
+  .price,
+  .quantity,
+  .subtotal {
+    width: 20%;
+  }
+  
+  .price-number {
+    font-size: 1.5rem;
+    color: #be9a75;
+  }
+  
+  .quantity * {
+    font-size: 1.4rem;
+    color: #000000;
+  }
+  .quantity span {
+    margin: 0 1rem;
+  }
+  
+  .subtotal-number {
+    font-size: 1.5rem;
+    color: #000000;
+  }
+  
+  .miditem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #fff;
+    padding: 0.8rem;
+    margin-bottom: 3rem;
+  }
+  
+  .mid-btn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .mid-btn .btn {
+    line-height: 1;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 23.6rem;
+    align-items: center;
+    padding: 2.25rem 4rem;
+    display: inline-flex;
+    color: #1b1b1b;
+    background-color: #ffffff;
+    justify-content: space-between;
+    border: none;
+    text-transform: uppercase;
+  }
+  .mid-btn .btn:not(:last-child) {
+    margin-right: 3rem;
+  }
+  .mid-btn .brown {
+    color: #ffffff;
+    background-color: #be9a75;
+  }
+  
+ .mid-btn .brown:hover{
+    background-color: black;
+    color: white;
+  }
+
+  .boticon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    bottom: -36px;
+  }
+  .boticon-container {
+    width: 80%;
+  }
+  .boticon-icon {
+    z-index: 1;
+    width: 72px;
+    height: 72px;
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    background-color: #fff;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    box-shadow: 0px 4px 16px 0px rgba(179, 179, 179, 0.25);
+  }
+  .boticon-icon img {
+    height: auto;
+    max-width: 100%;
+    rotate: -45deg;
+  }

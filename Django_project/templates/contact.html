@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Liên hệ
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/contact.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static "js/contact.js" %}"></script>
+{% endblock link_content %}
+
+{% block product%}{% endblock product%}
+
+{% block contact_content%}
+    <div class="container section_2">
+        <div class="row">
+            <div class="col">
+                <h6>Email</h6>
+                <p>21522583@gm.uit.edu.vn</p>
+            </div>
+            <div class="col">
+                <h6>Location</h6>
+                <p>
+                    15A Nguyễn Trung Trực, Phường 5, Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam
+                </p>
+            </div>
+            <div class="col">
+                <h6>Phone number</h6>
+                <p> 
+                    088 - 01869018907
+                    <br>
+                    (88) 908 675 43667
+                </p>
+            </div>
+        </div>
+        <div class="contact_form">
+            <form action="">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4"></div>
+                </div>
+                <div class="row row_2">
+                    <div class="col">
+                        <input id="name" type="text" class="form-control" placeholder="Name:">
+                    </div>
+                    <div class="col">
+                        <input id="email" type="text" class="form-control" placeholder="Mail:">
+                    </div>
+                </div>
+                <div class="row row_3">
+                    <div class="col">
+                        <input id="subject" type="text" class="form-control" placeholder="Subject:">
+                    </div>
+                </div>
+                <div class="row row_4">
+                    <div class="col">
+                        <textarea id="message" name="" id="" cols="30" rows="10" class="form-control" placeholder="Message:"></textarea>
+                    </div>
+                </div>
+                <div class="div_btn">
+                    <button id="submit_button" class="btn_contact_form">
+                        Gửi tin nhắn
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="section_3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416692!2d106.80047917471231!3d10.87000888928448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1701922033559!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+{% endblock contact_content%}

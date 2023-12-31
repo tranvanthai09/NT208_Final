@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Blogs
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+{% endblock link_content %}
+
+{% block product%}{% endblock product%}
+
+{% block blog_content%}
+    <div class="container section_2">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="post_blogs">
+                    <img src="{% static "image/img_post.jpg"%}" alt="img_post" class="img_post">
+                    <div class="title_post">
+                        <h4>ROREM IPSUM DOLOR SIT AMET, CONSE CTETURE YEMEI..</h4>
+                    </div>
+                    <div class="text_post">
+                        <p>Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim veniam, quis nostrud exerc itaullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.ea commodo consequaty.</p>
+                    </div>
+                    <button class="btn_post">Read more</button>
+                </div>
+
+                <div class="post_blogs">
+                    <img src="{% static "image/img_post.jpg"%}" alt="img_post" class="img_post">
+                    <div class="title_post">
+                        <h4>ROREM IPSUM DOLOR SIT AMET, CONSE CTETURE YEMEI..</h4>
+                    </div>
+                    <div class="text_post">
+                        <p>Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim veniam, quis nostrud exerc itaullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.ea commodo consequaty.</p>
+                    </div>
+                    <button class="btn_post">Read more</button>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+{% endblock blog_content%}
+

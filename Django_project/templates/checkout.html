@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_content%}
+Thanh toán
+{% endblock title_content%}
+
+{% block link_content%}
+    <link rel="stylesheet" href="{% static "css/checkout.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static "js/checkout.js" %}"></script>
+{% endblock link_content %}
+
+{% block checkout_content%}
+    <!-- form  -->
+    <div class="container section_2">
+        <div class="method_payment">
+            <h2>Phương thức thanh toán</h2>
+            <div class="form-check">
+                <label for="" class="form-check-lable">
+                    <input type="radio" class="form-check-input" name="method_checkout">Banking
+                </label>
+            </div>
+            <div class="form-check">
+                <label for="" class="form-check-lable">
+                    <input type="radio" class="form-check-input" name="method_checkout">Tiền mặt
+                </label>
+            </div>
+        </div>
+
+        <div class="personal_info">
+            <h2>Thông tin</h2>
+
+            <div class="row">
+                <div class="col">
+                    <label for="first_name">Họ:</label>
+                    <input id="first_name" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="last_name">Tên:</label>
+                    <input id="last_name" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="number">Số điện thoại:</label>
+                    <input id="number" type="number" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="add">Địa chỉ:</label>
+                    <input id="address" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="mail">Email:</label>
+                    <input id="email" type="email" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="add_info">Lưu ý:</label>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="div_btn_checkout">
+                <button id="checkout_btn" class="btn_checkout">Đặt hàng</button>
+            </div>
+        </div>
+    </div>
+{% endblock checkout_content%}
